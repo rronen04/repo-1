@@ -9,7 +9,7 @@ install:
 - unzip ~/cxcli.zip -d ~/cxcli
 - chmod +x ~/cxcli/runCxConsole.sh
 script:
-- ~/cxcli/runCxConsole.sh Scan -CxServer $CX_SERVER -CxUser $CX_USER -CxPassword $CX_PASSWORD -ProjectName "CxServer\\Mexico\\Desarrollo\\$PROJECT_NAME-$TRAVIS_BRANCH" -preset "$CX_PRESET" -LocationType folder -LocationPath $TRAVIS_BUILD_DIR -SASTHigh $CX_HIGH -SASTMedium $CX_MEDIUM -SASTLow $CX_LOW -ReportXML $TRAVIS_BUILD_DIR/results-$PROJECT_NAME-$TRAVIS_BRANCH.xml -ReportPDF $TRAVIS_BUILD_DIR/results-$PROJECT_NAME-$TRAVIS_BRANCH.pdf -Comment "git $TRAVIS_BRANCH@$TRAVIS_COMMIT" -verbose
+- ~/cxcli/runCxConsole.sh Scan -CxServer $CX_SERVER -CxUser $CX_USER -CxPassword $CX_PASSWORD -ProjectName "$CX_TEAM\\$PROJECT_NAME-$TRAVIS_BRANCH" -preset "$CX_PRESET" -LocationType folder -LocationPath $TRAVIS_BUILD_DIR -SASTHigh $CX_HIGH -SASTMedium $CX_MEDIUM -SASTLow $CX_LOW -ReportXML $TRAVIS_BUILD_DIR/results-$PROJECT_NAME-$TRAVIS_BRANCH.xml -ReportPDF $TRAVIS_BUILD_DIR/results-$PROJECT_NAME-$TRAVIS_BRANCH.pdf -Comment "git $TRAVIS_BRANCH@$TRAVIS_COMMIT" -verbose
 addons:
   artifacts:
     paths:
